@@ -33,6 +33,7 @@ p2d_t p2d[] =
   {2143, 2245, RELAY_ON},
   {2246, 2348, RELAY_ON},
   {2349, 2400, RELAY_ON},
+  {2401, 20000, RELAY_ON},  //180度以上もON扱いとする
 };
 
 
@@ -212,6 +213,7 @@ void loop() {
 
   for (int i = 0; i < sizeof(relay) / sizeof(relay[0]); i++) {
     relay[i].RelayOn();
+    delay(10);
   }
 }
 
